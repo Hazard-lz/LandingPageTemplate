@@ -47,7 +47,9 @@
   <div id="cursor-glow"></div>
 
   <!-- CANVAS BACKGROUND PARTICLES -->
+  <!-- CANVAS & OVERLAY BACKDROP -->
   <canvas id="particle-canvas"></canvas>
+  <div class="nav-backdrop" id="nav-backdrop"></div>
 
   <!-- NAVBAR -->
   <header class="navbar">
@@ -59,6 +61,12 @@
     </a>
 
     <ul class="nav-menu">
+      <li class="mobile-menu-header">
+        <span class="mobile-menu-title">Navegação</span>
+        <button class="mobile-menu-close" id="mobile-menu-close" aria-label="Fechar Menu">
+          <i class="fa-solid fa-xmark"></i>
+        </button>
+      </li>
       <li><a href="#beneficios" class="nav-link">Benefícios</a></li>
       <li><a href="#importancia" class="nav-link">Importância</a></li>
       <li><a href="#comparativo" class="nav-link">Comparativo</a></li>

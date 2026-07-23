@@ -96,12 +96,54 @@ body.light-mode .hamburger span {
   background: #0f172a !important;
 }
 /* Mobile nav panel */
-@media (max-width: 768px) {
+@media (max-width: 991px) {
+  body.light-mode.menu-open .navbar {
+    background: transparent !important;
+    backdrop-filter: none !important;
+    -webkit-backdrop-filter: none !important;
+    box-shadow: none !important;
+    border-bottom: none !important;
+  }
+
+  body.light-mode.menu-open .nav-brand,
+  body.light-mode.menu-open .theme-mode-toggle {
+    opacity: 0 !important;
+    visibility: hidden !important;
+    pointer-events: none !important;
+  }
+
+  body.light-mode.menu-open .hamburger span {
+    background: #ffffff !important;
+  }
+
+  .nav-menu {
+    background: #060911 !important;
+    backdrop-filter: none !important;
+    -webkit-backdrop-filter: none !important;
+    box-shadow: -10px 0 50px rgba(0, 0, 0, 0.9) !important;
+  }
+  .nav-menu .nav-link {
+    color: #ffffff !important;
+  }
+
   body.light-mode .nav-menu {
-    background: rgba(255, 255, 255, 0.98) !important;
-    backdrop-filter: blur(25px) !important;
+    background: #ffffff !important;
+    backdrop-filter: none !important;
+    -webkit-backdrop-filter: none !important;
+    box-shadow: -10px 0 50px rgba(0, 0, 0, 0.2) !important;
   }
   body.light-mode .nav-menu .nav-link {
+    color: #0f172a !important;
+  }
+  body.light-mode .mobile-menu-header {
+    border-bottom-color: rgba(15, 23, 42, 0.1) !important;
+  }
+  body.light-mode .mobile-menu-title {
+    color: #64748b !important;
+  }
+  body.light-mode .mobile-menu-close {
+    background: #f1f5f9 !important;
+    border-color: rgba(15, 23, 42, 0.12) !important;
     color: #0f172a !important;
   }
 }
@@ -879,6 +921,9 @@ body.light-mode .whatsapp-tooltip {
   border-color: rgba(37, 211, 102, 0.5) !important;
   box-shadow: 0 10px 30px rgba(15, 23, 42, 0.12) !important;
 }
+body.light-mode .whatsapp-tooltip strong {
+  color: #16a34a !important;
+}
 body.light-mode .whatsapp-tooltip span {
-  color: #0f172a !important;
+  color: #475569 !important;
 }

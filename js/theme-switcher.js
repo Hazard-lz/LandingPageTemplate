@@ -89,20 +89,68 @@ function initNavbarAndProgress() {
   }
 
   if (hamburger && navMenu) {
-    hamburger.addEventListener('click', () => {
-      hamburger.classList.toggle('active');
-      navMenu.classList.toggle('active');
-      document.body.classList.toggle('menu-open');
+    function closeMobileMenu() {
+      hamburger.classList.remove('active');
+      navMenu.classList.remove('active');
+      document.body.classList.remove('menu-open');
+    }
+
+    hamburger.addEventListener('click', (e) => {
+      e.stopPropagation();
+      const isActive = navMenu.classList.contains('active');
+      if (isActive) {
+        closeMobileMenu();
+      } else {
+        hamburger.classList.add('active');
+        navMenu.classList.add('active');
+        document.body.classList.add('menu-open');
+      }
     });
 
     const allMobileMenuLinks = navMenu.querySelectorAll('a');
     allMobileMenuLinks.forEach(link => {
-      link.addEventListener('click', () => {
-        hamburger.classList.remove('active');
-        navMenu.classList.remove('active');
-        document.body.classList.remove('menu-open');
-      });
+      link.addEventListener('click', closeMobileMenu);
     });
+
+    const backdrop = document.getElementById('nav-backdrop');
+    if (backdrop) {
+      backdrop.addEventListener('click', closeMobileMenu);
+    }
+
+    const mobileMenuCloseBtn = document.getElementById('mobile-menu-close');
+    if (mobileMenuCloseBtn) {
+      mobileMenuCloseBtn.addEventListener('click', closeMobileMenu);
+    }
+
+    // Fechar menu de navegação ao clicar fora
+    document.addEventListener('click', (e) => {
+      if (navMenu.classList.contains('active')) {
+        if (!navMenu.contains(e.target) && !hamburger.contains(e.target)) {
+          closeMobileMenu();
+        }
+      }
+    });
+
+    // Fechar menu ao pressionar a tecla ESC
+    document.addEventListener('keydown', (e) => {
+      if (e.key === 'Escape' && navMenu.classList.contains('active')) {
+        closeMobileMenu();
+      }
+    });
+    // Ouvinte para o ícone flutuante do WhatsApp
+    const waFloat = document.querySelector('.whatsapp-float');
+    if (waFloat) {
+      waFloat.addEventListener('click', (e) => {
+        const href = waFloat.getAttribute('href');
+        if (href && href.startsWith('#')) {
+          e.preventDefault();
+          const target = document.querySelector(href);
+          if (target) {
+            target.scrollIntoView({ behavior: 'smooth', block: 'start' });
+          }
+        }
+      });
+    }
   }
 }
 
@@ -149,12 +197,23 @@ function initNicheSwitcher() {
 
   if (!toggleBtn || !menu) return;
 
-  toggleBtn.addEventListener('click', () => {
+  let justToggled = false;
+
+  toggleBtn.addEventListener('click', (e) => {
+    e.preventDefault();
+    e.stopPropagation();
+    justToggled = true;
     menu.classList.toggle('show');
     toggleBtn.classList.toggle('active');
+    setTimeout(() => { justToggled = false; }, 150);
+  });
+
+  menu.addEventListener('click', (e) => {
+    e.stopPropagation();
   });
 
   document.addEventListener('click', (e) => {
+    if (justToggled) return;
     if (!toggleBtn.contains(e.target) && !menu.contains(e.target)) {
       menu.classList.remove('show');
       toggleBtn.classList.remove('active');
