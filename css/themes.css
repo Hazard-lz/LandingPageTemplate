@@ -1,0 +1,884 @@
+/* ==========================================================================
+   THEME OVERRIDES & LIGHT MODE SYSTEM
+   ========================================================================== */
+
+/* --- 0. CSS Variable overrides --- */
+body.light-mode {
+  background-color: #f8fafc !important;
+  color: #0f172a !important;
+
+  /* Backgrounds */
+  --bg-dark:        #f8fafc;
+  --bg-darker:      #f1f5f9;
+  --bg-card:        #ffffff;
+  --bg-card-hover:  #f8fafc;
+
+  /* Borders */
+  --border-light:   rgba(15, 23, 42, 0.09);
+  --border-color:   rgba(15, 23, 42, 0.12);
+  --border-active:  rgba(37, 99, 235, 0.45);
+
+  /* Text */
+  --text-main:  #0f172a;
+  --text-muted: #475569;
+  --text-dim:   #64748b;
+
+  /* Gradients */
+  --grad-text:       linear-gradient(135deg, #0f172a 20%, #2563eb 100%);
+  --grad-dark-card:  linear-gradient(145deg, #ffffff 0%, #f8fafc 100%);
+
+  /* Shadows */
+  --shadow-sm: 0 2px 8px rgba(15, 23, 42, 0.06);
+  --shadow-md: 0 8px 24px rgba(15, 23, 42, 0.08);
+  --shadow-lg: 0 20px 50px rgba(15, 23, 42, 0.10);
+}
+
+/* --- 1. Scrollbar --- */
+body.light-mode ::-webkit-scrollbar-track {
+  background: #f1f5f9 !important;
+}
+body.light-mode ::-webkit-scrollbar-thumb {
+  background: rgba(15, 23, 42, 0.18) !important;
+  border-color: #f1f5f9 !important;
+}
+body.light-mode ::-webkit-scrollbar-thumb:hover {
+  background: var(--primary) !important;
+}
+
+/* --- 2. Preloader --- */
+body.light-mode #preloader {
+  background: #f8fafc !important;
+}
+body.light-mode .loader-bar {
+  background: rgba(15, 23, 42, 0.1) !important;
+}
+
+/* --- 3. Cursor glow & particles --- */
+body.light-mode #cursor-glow {
+  background: radial-gradient(circle, rgba(37, 99, 235, 0.07) 0%, rgba(124, 58, 237, 0.04) 40%, transparent 70%) !important;
+}
+body.light-mode #particle-canvas {
+  opacity: 0.3 !important;
+}
+
+/* --- 4. Navbar --- */
+body.light-mode .navbar {
+  background: rgba(255, 255, 255, 0.85) !important;
+  backdrop-filter: blur(20px) !important;
+  -webkit-backdrop-filter: blur(20px) !important;
+}
+body.light-mode .navbar.scrolled {
+  background: rgba(255, 255, 255, 0.96) !important;
+  border-bottom: 1px solid rgba(15, 23, 42, 0.08) !important;
+  box-shadow: 0 4px 20px rgba(15, 23, 42, 0.06) !important;
+}
+@media (min-width: 992px) {
+  body.light-mode .nav-menu {
+    background: transparent !important;
+    border: none !important;
+    box-shadow: none !important;
+  }
+}
+body.light-mode .nav-brand {
+  color: #0f172a !important;
+}
+body.light-mode .nav-link {
+  color: #475569 !important;
+}
+body.light-mode .nav-link:hover,
+body.light-mode .nav-link.active {
+  color: var(--primary) !important;
+}
+body.light-mode .nav-link::after {
+  background: var(--grad-primary) !important;
+}
+body.light-mode .hamburger span {
+  background: #0f172a !important;
+}
+/* Mobile nav panel */
+@media (max-width: 768px) {
+  body.light-mode .nav-menu {
+    background: rgba(255, 255, 255, 0.98) !important;
+    backdrop-filter: blur(25px) !important;
+  }
+  body.light-mode .nav-menu .nav-link {
+    color: #0f172a !important;
+  }
+}
+
+/* --- 5. Theme toggle button --- */
+body.light-mode .theme-mode-toggle {
+  background: #ffffff !important;
+  border-color: rgba(15, 23, 42, 0.15) !important;
+  color: #0f172a !important;
+  box-shadow: 0 2px 8px rgba(15, 23, 42, 0.06) !important;
+}
+body.light-mode .theme-mode-toggle:hover {
+  border-color: var(--primary) !important;
+  color: var(--primary) !important;
+  box-shadow: 0 0 15px var(--primary-glow) !important;
+}
+
+/* --- 6. Niche Widget --- */
+#niche-widget,
+body.light-mode #niche-widget {
+  background: transparent !important;
+  border: none !important;
+  box-shadow: none !important;
+}
+body.light-mode .niche-toggle-btn {
+  background: #ffffff !important;
+  border: 1.5px solid var(--primary) !important;
+  color: #0f172a !important;
+  box-shadow: 0 10px 30px rgba(15, 23, 42, 0.12) !important;
+}
+body.light-mode .niche-toggle-btn span,
+body.light-mode .niche-toggle-btn i,
+body.light-mode .niche-arrow {
+  color: #0f172a !important;
+}
+body.light-mode .niche-toggle-btn:hover {
+  background: #f8fafc !important;
+}
+body.light-mode #niche-menu {
+  background: #ffffff !important;
+  border: 1px solid rgba(15, 23, 42, 0.12) !important;
+  box-shadow: 0 15px 40px rgba(15, 23, 42, 0.12) !important;
+}
+body.light-mode .niche-opt {
+  color: #475569 !important;
+}
+body.light-mode .niche-opt:hover,
+body.light-mode .niche-opt.active {
+  background: #f1f5f9 !important;
+  color: var(--primary) !important;
+}
+
+/* --- 7. Buttons --- */
+body.light-mode .btn-primary {
+  background: var(--grad-primary) !important;
+  color: #ffffff !important;
+  box-shadow: 0 4px 20px var(--primary-glow) !important;
+}
+body.light-mode .btn-primary span,
+body.light-mode .btn-primary i {
+  color: #ffffff !important;
+  -webkit-text-fill-color: #ffffff !important;
+}
+body.light-mode .btn-secondary {
+  background: #ffffff !important;
+  color: #0f172a !important;
+  border: 1px solid rgba(15, 23, 42, 0.15) !important;
+  box-shadow: 0 2px 8px rgba(15, 23, 42, 0.04) !important;
+}
+body.light-mode .btn-secondary:hover {
+  border-color: var(--primary) !important;
+  color: var(--primary) !important;
+}
+
+/* --- 8. Section headers & badges --- */
+body.light-mode .badge {
+  background: rgba(37, 99, 235, 0.08) !important;
+  color: var(--primary) !important;
+  border-color: rgba(37, 99, 235, 0.2) !important;
+}
+body.light-mode .section-title {
+  color: #0f172a !important;
+}
+body.light-mode .section-subtitle {
+  color: #475569 !important;
+}
+body.light-mode .text-gradient {
+  background: linear-gradient(135deg, var(--primary) 0%, var(--accent) 100%) !important;
+  -webkit-background-clip: text !important;
+  background-clip: text !important;
+  -webkit-text-fill-color: transparent !important;
+}
+
+/* --- 9. Hero --- */
+body.light-mode .hero {
+  background: radial-gradient(circle at 50% 0%, rgba(37, 99, 235, 0.06) 0%, transparent 60%) !important;
+}
+body.light-mode .hero h1 {
+  color: #0f172a !important;
+}
+body.light-mode .hero p {
+  color: #475569 !important;
+}
+body.light-mode .typing-text {
+  background: linear-gradient(135deg, var(--primary) 0%, var(--accent) 100%) !important;
+  -webkit-background-clip: text !important;
+  background-clip: text !important;
+  -webkit-text-fill-color: transparent !important;
+}
+body.light-mode .hero-social-proof {
+  border-top-color: rgba(15, 23, 42, 0.1) !important;
+}
+body.light-mode .avatar-group img {
+  border-color: #ffffff !important;
+}
+body.light-mode .proof-info p {
+  color: #0f172a !important;
+}
+body.light-mode .proof-info span {
+  color: #64748b !important;
+}
+body.light-mode .hero-image-wrapper {
+  background: #ffffff !important;
+  border-color: rgba(15, 23, 42, 0.1) !important;
+  box-shadow: 0 20px 50px rgba(15, 23, 42, 0.08) !important;
+}
+body.light-mode .floating-badge {
+  background: #ffffff !important;
+  border-color: rgba(15, 23, 42, 0.1) !important;
+  box-shadow: 0 10px 30px rgba(15, 23, 42, 0.08) !important;
+}
+body.light-mode .floating-badge .badge-title {
+  color: #0f172a !important;
+}
+body.light-mode .floating-badge .badge-sub {
+  color: #64748b !important;
+}
+body.light-mode .scroll-indicator {
+  color: #64748b !important;
+}
+
+/* --- 10. Glass cards (generic) --- */
+body.light-mode .glass-card {
+  background: #ffffff !important;
+  border-color: rgba(15, 23, 42, 0.08) !important;
+}
+body.light-mode .glass-card:hover {
+  border-color: var(--primary) !important;
+  box-shadow: 0 12px 30px -10px rgba(37, 99, 235, 0.15) !important;
+}
+
+/* --- 11. Benefits section --- */
+body.light-mode .benefit-card {
+  background: #ffffff !important;
+  border-color: rgba(15, 23, 42, 0.08) !important;
+  box-shadow: 0 4px 15px rgba(15, 23, 42, 0.04) !important;
+}
+body.light-mode .benefit-card:hover {
+  border-color: var(--primary) !important;
+  box-shadow: 0 15px 35px -10px var(--primary-glow) !important;
+}
+body.light-mode .benefit-card h3 {
+  color: #0f172a !important;
+}
+body.light-mode .benefit-card p {
+  color: #475569 !important;
+}
+body.light-mode .benefit-icon {
+  background: var(--primary-glow) !important;
+  border-color: var(--border-active) !important;
+  color: var(--primary) !important;
+}
+
+/* --- 12. Importance section --- */
+body.light-mode .importance-card {
+  background: #ffffff !important;
+  border-color: rgba(15, 23, 42, 0.08) !important;
+  box-shadow: 0 4px 15px rgba(15, 23, 42, 0.04) !important;
+}
+body.light-mode .importance-card:hover {
+  border-color: var(--primary) !important;
+  box-shadow: 0 15px 35px -10px var(--primary-glow) !important;
+}
+body.light-mode .importance-card h3 {
+  color: #0f172a !important;
+}
+body.light-mode .importance-card p {
+  color: #475569 !important;
+}
+body.light-mode .importance-icon {
+  background: var(--primary-glow) !important;
+  border-color: var(--border-active) !important;
+  color: var(--primary) !important;
+}
+
+/* --- 13. About section --- */
+body.light-mode .about-image {
+  border-color: rgba(15, 23, 42, 0.08) !important;
+  box-shadow: 0 20px 40px rgba(15, 23, 42, 0.08) !important;
+}
+body.light-mode .about-experience-card {
+  color: #ffffff !important;
+}
+body.light-mode .about-experience-card .exp-num {
+  color: #ffffff !important;
+}
+body.light-mode .about-experience-card .exp-text {
+  color: rgba(255,255,255,0.85) !important;
+}
+body.light-mode .about-content h2 {
+  color: #0f172a !important;
+}
+body.light-mode .about-content p {
+  color: #475569 !important;
+}
+body.light-mode .advantages-list li {
+  color: #1e293b !important;
+}
+body.light-mode .advantages-list li i {
+  background: rgba(37, 99, 235, 0.1) !important;
+  color: var(--primary) !important;
+}
+
+/* --- 14. Stats section --- */
+body.light-mode .stats-section {
+  background: linear-gradient(180deg, transparent 0%, rgba(37, 99, 235, 0.04) 50%, transparent 100%) !important;
+  border-color: rgba(15, 23, 42, 0.08) !important;
+}
+body.light-mode .stat-card {
+  background: #ffffff !important;
+  border-color: rgba(15, 23, 42, 0.08) !important;
+  box-shadow: 0 4px 15px rgba(15, 23, 42, 0.04) !important;
+}
+body.light-mode .stat-card:hover {
+  border-color: var(--primary) !important;
+  box-shadow: 0 15px 35px -10px var(--primary-glow) !important;
+}
+body.light-mode .stat-label {
+  color: #64748b !important;
+}
+
+/* --- 15. Services section --- */
+body.light-mode .service-card {
+  background: #ffffff !important;
+  border-color: rgba(15, 23, 42, 0.08) !important;
+  box-shadow: 0 4px 15px rgba(15, 23, 42, 0.04) !important;
+}
+body.light-mode .service-card:hover {
+  border-color: var(--primary) !important;
+  box-shadow: 0 15px 35px -10px var(--primary-glow) !important;
+}
+body.light-mode .service-card h3 {
+  color: #0f172a !important;
+}
+body.light-mode .service-card p {
+  color: #475569 !important;
+}
+body.light-mode .service-icon-box {
+  background: var(--primary-glow) !important;
+  border-color: var(--border-active) !important;
+  color: var(--primary) !important;
+}
+body.light-mode .service-link {
+  color: var(--primary) !important;
+}
+
+/* --- 16. Process section --- */
+body.light-mode .timeline::before {
+  background: rgba(15, 23, 42, 0.12) !important;
+  opacity: 1 !important;
+}
+body.light-mode .step-number {
+  background: #ffffff !important;
+  color: var(--primary) !important;
+  border: 2px solid var(--primary) !important;
+  box-shadow: 0 4px 15px rgba(15, 23, 42, 0.08) !important;
+}
+body.light-mode .step-number.active-step {
+  background: var(--grad-primary) !important;
+  color: #ffffff !important;
+  border-color: transparent !important;
+  box-shadow: 0 8px 25px var(--primary-glow) !important;
+}
+body.light-mode .timeline-step:hover .step-number {
+  background: var(--grad-primary) !important;
+  color: #ffffff !important;
+  border-color: transparent !important;
+  box-shadow: 0 8px 25px var(--primary-glow) !important;
+}
+body.light-mode .step-content {
+  background: #ffffff !important;
+  border: 1px solid rgba(15, 23, 42, 0.08) !important;
+  box-shadow: 0 4px 20px rgba(15, 23, 42, 0.05) !important;
+}
+body.light-mode .timeline-step:hover .step-content {
+  border-color: var(--primary) !important;
+  box-shadow: 0 15px 35px -10px var(--primary-glow) !important;
+}
+body.light-mode .step-content h3 {
+  color: #0f172a !important;
+}
+body.light-mode .step-content p {
+  color: #475569 !important;
+}
+body.light-mode .step-icon {
+  background: var(--primary-glow) !important;
+  border-color: var(--border-active) !important;
+  color: var(--primary) !important;
+}
+body.light-mode .timeline-step:hover .step-icon {
+  background: var(--grad-primary) !important;
+  color: #ffffff !important;
+  border-color: transparent !important;
+}
+
+/* --- 17. Portfolio section --- */
+body.light-mode .portfolio-filter .filter-btn {
+  background: #ffffff !important;
+  color: #475569 !important;
+  border: 1px solid rgba(15, 23, 42, 0.12) !important;
+}
+body.light-mode .portfolio-filter .filter-btn:hover,
+body.light-mode .portfolio-filter .filter-btn.active {
+  background: var(--grad-primary) !important;
+  color: #ffffff !important;
+  border-color: transparent !important;
+}
+body.light-mode .portfolio-card {
+  background: #ffffff !important;
+  border-color: rgba(15, 23, 42, 0.08) !important;
+  box-shadow: 0 4px 15px rgba(15, 23, 42, 0.04) !important;
+}
+body.light-mode .portfolio-card:hover {
+  border-color: var(--primary) !important;
+  box-shadow: 0 15px 35px -10px var(--primary-glow) !important;
+}
+.portfolio-overlay h3,
+.portfolio-overlay p,
+.portfolio-overlay .portfolio-title,
+.portfolio-overlay .portfolio-desc,
+body.light-mode .portfolio-overlay h3,
+body.light-mode .portfolio-overlay p,
+body.light-mode .portfolio-overlay .portfolio-title,
+body.light-mode .portfolio-overlay .portfolio-desc {
+  color: #ffffff !important;
+}
+body.light-mode .portfolio-tag {
+  display: inline-flex !important;
+  align-items: center !important;
+  width: fit-content !important;
+  padding: 0.25rem 0.75rem !important;
+  border-radius: 9999px !important;
+  background: rgba(37, 99, 235, 0.85) !important;
+  border: 1px solid rgba(37, 99, 235, 0.6) !important;
+  color: #ffffff !important;
+  font-size: 0.7rem !important;
+  font-weight: 700 !important;
+  letter-spacing: 0.5px !important;
+  text-transform: uppercase !important;
+}
+body.light-mode .lightbox-content {
+  background: #ffffff !important;
+  border-color: rgba(15, 23, 42, 0.12) !important;
+  box-shadow: 0 25px 60px rgba(15, 23, 42, 0.15) !important;
+}
+body.light-mode .lightbox-close {
+  background: #ffffff !important;
+  color: #0f172a !important;
+  border: 1px solid rgba(15, 23, 42, 0.15) !important;
+  box-shadow: 0 4px 15px rgba(0, 0, 0, 0.2) !important;
+}
+body.light-mode .lightbox-close:hover {
+  background: var(--primary) !important;
+  color: #ffffff !important;
+  border-color: var(--primary) !important;
+  transform: scale(1.1) !important;
+}
+
+/* --- 18. Pricing section --- */
+.pricing-toggle-wrapper {
+  display: flex !important;
+  align-items: center !important;
+  justify-content: center !important;
+  gap: 1rem !important;
+  width: fit-content !important;
+  max-width: 100% !important;
+  margin: 0 auto 3.5rem !important;
+  padding: 0.55rem 1.5rem !important;
+  border-radius: 9999px !important;
+  background: var(--bg-card) !important;
+  border: 1px solid var(--border-light) !important;
+  box-shadow: 0 8px 30px rgba(0, 0, 0, 0.35) !important;
+  backdrop-filter: blur(12px) !important;
+  -webkit-backdrop-filter: blur(12px) !important;
+}
+body.light-mode .pricing-toggle-wrapper {
+  background: #ffffff !important;
+  border: 1px solid rgba(15, 23, 42, 0.12) !important;
+  box-shadow: 0 4px 15px rgba(15, 23, 42, 0.05) !important;
+}
+body.light-mode .pricing-label {
+  color: #64748b !important;
+}
+body.light-mode .pricing-label.active {
+  color: #0f172a !important;
+}
+body.light-mode .pricing-toggle {
+  background: #cbd5e1 !important;
+  border-color: rgba(15, 23, 42, 0.15) !important;
+}
+body.light-mode .pricing-toggle.active {
+  background: rgba(37, 99, 235, 0.2) !important;
+  border-color: var(--primary) !important;
+}
+body.light-mode .discount-badge-label {
+  background: rgba(37, 99, 235, 0.08) !important;
+  border-color: rgba(37, 99, 235, 0.25) !important;
+  color: var(--primary) !important;
+}
+body.light-mode .pricing-toggle-wrapper.annual-active .discount-badge-label {
+  background: var(--primary) !important;
+  color: #ffffff !important;
+}
+body.light-mode .pricing-card {
+  background: #ffffff !important;
+  border-color: rgba(15, 23, 42, 0.08) !important;
+  box-shadow: 0 4px 15px rgba(15, 23, 42, 0.04) !important;
+}
+body.light-mode .pricing-card:hover {
+  border-color: var(--primary) !important;
+  box-shadow: 0 15px 35px -10px var(--primary-glow) !important;
+}
+body.light-mode .pricing-card.popular {
+  background: #ffffff !important;
+  border: 2px solid var(--primary) !important;
+  box-shadow: 0 15px 40px var(--primary-glow) !important;
+}
+body.light-mode .price-icon-box {
+  background: var(--primary-glow) !important;
+  border-color: var(--border-active) !important;
+  color: var(--primary) !important;
+}
+body.light-mode .pricing-card.popular .price-icon-box {
+  background: var(--grad-primary) !important;
+  color: #ffffff !important;
+  border-color: transparent !important;
+}
+body.light-mode .price-title {
+  color: #0f172a !important;
+}
+body.light-mode .price-desc {
+  color: #475569 !important;
+}
+body.light-mode .price-amount-wrapper {
+  border-bottom-color: rgba(15, 23, 42, 0.08) !important;
+}
+body.light-mode .price-val {
+  color: #0f172a !important;
+}
+body.light-mode .currency,
+body.light-mode .period {
+  color: #64748b !important;
+}
+body.light-mode .old-price {
+  color: #ef4444 !important;
+}
+body.light-mode .discount-pill {
+  background: rgba(239, 68, 68, 0.1) !important;
+  color: #ef4444 !important;
+  border-color: rgba(239, 68, 68, 0.3) !important;
+}
+body.light-mode .savings-banner {
+  background: rgba(16, 185, 129, 0.1) !important;
+  border-color: rgba(16, 185, 129, 0.3) !important;
+  color: #059669 !important;
+}
+body.light-mode .price-features li {
+  color: #1e293b !important;
+  border-bottom-color: rgba(15, 23, 42, 0.07) !important;
+}
+body.light-mode .price-features li.disabled {
+  color: #94a3b8 !important;
+}
+body.light-mode .price-features li i.fa-check {
+  background: rgba(37, 99, 235, 0.1) !important;
+  color: var(--primary) !important;
+}
+body.light-mode .price-features li.disabled i.fa-xmark {
+  background: rgba(15, 23, 42, 0.06) !important;
+  color: #94a3b8 !important;
+}
+body.light-mode .pricing-guarantee {
+  color: #64748b !important;
+}
+
+/* --- 19. Testimonials / Carousel --- */
+.carousel-controls {
+  display: flex !important;
+  align-items: center !important;
+  justify-content: center !important;
+  gap: 1.5rem !important;
+  margin-top: 2rem !important;
+  position: relative !important;
+  z-index: 100 !important;
+}
+.carousel-btn {
+  width: 48px !important;
+  height: 48px !important;
+  min-width: 48px !important;
+  min-height: 48px !important;
+  border-radius: 50% !important;
+  font-size: 1.1rem !important;
+  display: flex !important;
+  align-items: center !important;
+  justify-content: center !important;
+  cursor: pointer !important;
+  pointer-events: auto !important;
+  position: relative !important;
+  z-index: 100 !important;
+  transition: all 0.3s ease !important;
+}
+.carousel-btn {
+  background: rgba(255, 255, 255, 0.08) !important;
+  border: 1px solid rgba(255, 255, 255, 0.15) !important;
+  color: #ffffff !important;
+}
+.carousel-btn:hover {
+  background: var(--primary) !important;
+  border-color: var(--primary) !important;
+  box-shadow: var(--shadow-glow) !important;
+}
+body.light-mode .carousel-btn {
+  background: #ffffff !important;
+  border: 1.5px solid rgba(15, 23, 42, 0.15) !important;
+  color: #0f172a !important;
+  box-shadow: 0 4px 15px rgba(15, 23, 42, 0.08) !important;
+}
+body.light-mode .carousel-btn:hover {
+  background: var(--primary) !important;
+  color: #ffffff !important;
+  border-color: var(--primary) !important;
+  box-shadow: 0 8px 25px var(--primary-glow) !important;
+}
+.carousel-dots {
+  display: flex !important;
+  align-items: center !important;
+  gap: 0.6rem !important;
+}
+.dot {
+  width: 10px !important;
+  height: 10px !important;
+  min-width: 10px !important;
+  min-height: 10px !important;
+  border-radius: 50% !important;
+  background: rgba(255, 255, 255, 0.25) !important;
+  cursor: pointer !important;
+  pointer-events: auto !important;
+  flex-shrink: 0 !important;
+  transform: translateZ(0) !important;
+  will-change: width, background-color, border-radius !important;
+  transition:
+    width 0.3s cubic-bezier(0.4, 0, 0.2, 1),
+    background-color 0.3s ease,
+    border-radius 0.3s ease !important;
+}
+.dot.active {
+  width: 28px !important;
+  border-radius: 9999px !important;
+  background: var(--primary) !important;
+}
+body.light-mode .dot {
+  background: rgba(15, 23, 42, 0.2) !important;
+}
+body.light-mode .dot.active {
+  background: var(--primary) !important;
+}
+body.light-mode .testimonial-card {
+  background: #ffffff !important;
+  border-color: rgba(15, 23, 42, 0.08) !important;
+  box-shadow: 0 4px 20px rgba(15, 23, 42, 0.06) !important;
+}
+body.light-mode .testimonial-card:hover {
+  border-color: var(--primary) !important;
+  box-shadow: 0 15px 35px -10px var(--primary-glow) !important;
+}
+body.light-mode .testimonial-text {
+  color: #0f172a !important;
+}
+body.light-mode .user-info h4 {
+  color: #0f172a !important;
+}
+body.light-mode .user-info p {
+  color: #64748b !important;
+}
+body.light-mode .quote-icon {
+  color: rgba(37, 99, 235, 0.2) !important;
+}
+
+/* --- 20. FAQ section --- */
+body.light-mode .faq-item {
+  background: #ffffff !important;
+  border-color: rgba(15, 23, 42, 0.08) !important;
+  box-shadow: 0 2px 10px rgba(15, 23, 42, 0.04) !important;
+}
+body.light-mode .faq-item.open {
+  border-color: var(--primary) !important;
+  box-shadow: 0 8px 25px -5px rgba(37, 99, 235, 0.15) !important;
+}
+body.light-mode .faq-header {
+  color: #0f172a !important;
+}
+body.light-mode .faq-header:hover,
+body.light-mode .faq-item.open .faq-header {
+  color: var(--primary) !important;
+}
+body.light-mode .faq-icon {
+  background: rgba(15, 23, 42, 0.06) !important;
+  color: #0f172a !important;
+}
+body.light-mode .faq-item.open .faq-icon {
+  background: var(--primary) !important;
+  color: #ffffff !important;
+}
+body.light-mode .faq-body p {
+  color: #475569 !important;
+}
+
+/* --- 21. CTA section --- */
+body.light-mode .cta-box {
+  background: linear-gradient(135deg, rgba(37,99,235,0.07) 0%, rgba(124,58,237,0.07) 100%) !important;
+  border: 1px solid rgba(37, 99, 235, 0.15) !important;
+  box-shadow: 0 15px 40px rgba(37, 99, 235, 0.08) !important;
+}
+body.light-mode .cta-box h2 {
+  color: #0f172a !important;
+  -webkit-text-fill-color: #0f172a !important;
+}
+body.light-mode .cta-box p {
+  color: #334155 !important;
+}
+body.light-mode .cta-box .btn {
+  background: var(--grad-primary) !important;
+  color: #ffffff !important;
+  box-shadow: 0 10px 30px var(--primary-glow) !important;
+}
+body.light-mode .cta-box .btn:hover {
+  box-shadow: 0 15px 40px var(--primary-glow) !important;
+}
+
+/* --- 22. Contact section --- */
+body.light-mode .contact-demo-banner {
+  background: rgba(37, 99, 235, 0.05) !important;
+  border-color: rgba(37, 99, 235, 0.25) !important;
+  box-shadow: 0 4px 20px rgba(15, 23, 42, 0.05) !important;
+}
+body.light-mode .contact-demo-banner .banner-text {
+  color: #1e293b !important;
+}
+body.light-mode .info-note {
+  color: var(--primary) !important;
+}
+body.light-mode .form-demo-badge {
+  background: rgba(37, 99, 235, 0.08) !important;
+  border-color: rgba(37, 99, 235, 0.2) !important;
+  color: var(--primary) !important;
+}
+body.light-mode .info-icon {
+  background: var(--primary-glow) !important;
+  border-color: var(--border-active) !important;
+  color: var(--primary) !important;
+}
+body.light-mode .info-text h4 {
+  color: #0f172a !important;
+}
+body.light-mode .info-text p {
+  color: #475569 !important;
+}
+body.light-mode .contact-form {
+  background: #ffffff !important;
+  border-color: rgba(15, 23, 42, 0.08) !important;
+  box-shadow: 0 10px 30px rgba(15, 23, 42, 0.06) !important;
+}
+body.light-mode .form-label {
+  color: #0f172a !important;
+}
+body.light-mode .form-input {
+  background: #f8fafc !important;
+  border-color: rgba(15, 23, 42, 0.15) !important;
+  color: #0f172a !important;
+}
+body.light-mode .form-input::placeholder {
+  color: #94a3b8 !important;
+}
+body.light-mode .form-input:focus {
+  background: #ffffff !important;
+  border-color: var(--primary) !important;
+  box-shadow: 0 0 0 3px var(--primary-glow) !important;
+}
+
+/* --- 23. Toast notification --- */
+body.light-mode #toast {
+  background: #ffffff !important;
+  border-color: var(--primary) !important;
+  color: #0f172a !important;
+  box-shadow: 0 10px 30px rgba(15, 23, 42, 0.12) !important;
+}
+
+/* --- 24. Back to top --- */
+/* back-to-top keeps gradient */
+
+/* --- 25. Footer --- */
+body.light-mode footer {
+  background: #f1f5f9 !important;
+  border-top-color: rgba(15, 23, 42, 0.08) !important;
+}
+body.light-mode .footer-brand p {
+  color: #475569 !important;
+}
+body.light-mode .footer-col h4 {
+  color: #0f172a !important;
+}
+body.light-mode .footer-links a {
+  color: #475569 !important;
+}
+body.light-mode .footer-links a:hover {
+  color: var(--primary) !important;
+}
+body.light-mode .footer-bottom {
+  border-top-color: rgba(15, 23, 42, 0.08) !important;
+  color: #64748b !important;
+}
+body.light-mode .footer-bottom p {
+  color: #64748b !important;
+}
+body.light-mode .social-icon {
+  background: #ffffff !important;
+  border-color: rgba(15, 23, 42, 0.1) !important;
+  color: #0f172a !important;
+}
+body.light-mode .social-icon:hover {
+  background: var(--primary) !important;
+  color: #ffffff !important;
+  border-color: transparent !important;
+}
+
+/* --- 26. Remove desktop navbar rectangle artifact --- */
+@media (min-width: 992px) {
+  .nav-menu,
+  body.light-mode .nav-menu {
+    background: transparent !important;
+    border: none !important;
+    box-shadow: none !important;
+  }
+}
+
+/* --- 27. Comparison & WhatsApp Light Mode --- */
+body.light-mode .comparison-card.bad {
+  background: #ffffff !important;
+  border-color: rgba(239, 68, 68, 0.3) !important;
+  box-shadow: 0 4px 20px rgba(239, 68, 68, 0.05) !important;
+}
+body.light-mode .comparison-card.good {
+  background: #ffffff !important;
+  border-color: var(--primary) !important;
+  box-shadow: 0 10px 30px rgba(37, 99, 235, 0.12) !important;
+}
+body.light-mode .comparison-card-header h3 {
+  color: #0f172a !important;
+}
+body.light-mode .comparison-list li {
+  color: #1e293b !important;
+}
+body.light-mode .whatsapp-tooltip {
+  background: #ffffff !important;
+  border-color: rgba(37, 211, 102, 0.5) !important;
+  box-shadow: 0 10px 30px rgba(15, 23, 42, 0.12) !important;
+}
+body.light-mode .whatsapp-tooltip span {
+  color: #0f172a !important;
+}

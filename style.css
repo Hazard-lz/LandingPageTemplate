@@ -1,0 +1,16 @@
+/* ==========================================================================
+   LANDING PAGE TEMPLATE - MASTER CSS ENTRYPOINT
+   Modular CSS Architecture: Pure HTML5, CSS3, Vanilla JS
+   ========================================================================== */
+
+/* 1. Design Tokens, Variables & Reset Base */
+@import url('css/variables.css');
+
+/* 2. Reusable UI Components & Floating Widgets */
+@import url('css/components.css');
+
+/* 3. Page Sections & Layout Specific Styles */
+@import url('css/sections.css');
+
+/* 4. Theme Overrides & Light Mode System */
+@import url('css/themes.css');
