@@ -2088,7 +2088,7 @@ footer {
   }
 }
 
-@media (max-width: 991px) {
+@media (max-width: 1279px) {
   body.menu-open .navbar {
     z-index: 100000 !important;
     background: transparent !important;
@@ -2124,7 +2124,7 @@ footer {
   }
 
   .mobile-menu-header {
-    display: flex;
+    display: flex !important;
     align-items: center;
     justify-content: space-between;
     width: 100%;

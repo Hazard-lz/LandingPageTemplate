@@ -96,7 +96,7 @@ body.light-mode .hamburger span {
   background: #0f172a !important;
 }
 /* Mobile nav panel */
-@media (max-width: 991px) {
+@media (max-width: 1279px) {
   body.light-mode.menu-open .navbar {
     background: transparent !important;
     backdrop-filter: none !important;
@@ -890,7 +890,7 @@ body.light-mode .social-icon:hover {
 }
 
 /* --- 26. Remove desktop navbar rectangle artifact --- */
-@media (min-width: 992px) {
+@media (min-width: 1280px) {
   .nav-menu,
   body.light-mode .nav-menu {
     background: transparent !important;
